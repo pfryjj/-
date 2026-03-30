@@ -27,10 +27,10 @@ def pop():
         return stack.pop()
 def peek():
     if isEmpty():
+        print('stack이 비어있습니다')
         return -1
     else:
         return stack[len(stack)-1]
-        print('stack이 비어있습니다')
 
 print(f'[[정수형 스택 연산 실습 (용량 : {capacity})]]')
 
@@ -49,7 +49,8 @@ while True:
         data = pop()
         print('')
     elif menu == 3:
-        data = stack[len(stack)-1]
+        data = peek()
+    if data != -1:
         print('>[top] 데이터 확인:', data)
 
     print('> 현재 스택 상태', stack)
